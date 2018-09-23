@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -38,10 +38,6 @@
 
 
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -50,19 +46,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
 
 
 
@@ -79,13 +75,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="近期模板总结  数据结构 [x] 分块 [x] 莫队 [x] 可并堆 [x] 动态树 LCT [x] hash [ ] treap &amp;amp; splay [ ] K-d 树 [x] 主席树 [x] 树上并查集 [ ] 莫队   图论 [ ] 欧拉回路 [ ] 图的割点 桥 连通分量 [ ] 2-SAT [ ] 网络流 （有上下界） [ ] 二分图最大(权)匹配 [ ] 最大独立集 [ ] 最大团">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my plan &amp; code">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/my-plan-code/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="近期模板总结  数据结构 [x] 分块 [x] 莫队 [x] 可并堆 [x] 动态树 LCT [x] hash [ ] treap &amp;amp; splay [ ] K-d 树 [x] 主席树 [x] 树上并查集 [ ] 莫队   图论 [ ] 欧拉回路 [ ] 图的割点 桥 连通分量 [ ] 2-SAT [ ] 网络流 （有上下界） [ ] 二分图最大(权)匹配 [ ] 最大独立集 [ ] 最大团">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-23T14:04:48.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="my plan &amp; code">
+<meta name="twitter:description" content="近期模板总结  数据结构 [x] 分块 [x] 莫队 [x] 可并堆 [x] 动态树 LCT [x] hash [ ] treap &amp;amp; splay [ ] K-d 树 [x] 主席树 [x] 树上并查集 [ ] 莫队   图论 [ ] 欧拉回路 [ ] 图的割点 桥 连通分量 [ ] 2-SAT [ ] 网络流 （有上下界） [ ] 二分图最大(权)匹配 [ ] 最大独立集 [ ] 最大团">
 
 
 
@@ -94,9 +94,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.4',
+    version: '6.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
@@ -115,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/23/my-plan-code/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>Hexo</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -140,12 +142,12 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"> <div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -260,9 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-23T21:37:05+08:00">
-                2018-09-23
-              </time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-23T21:37:05+08:00">2018-09-23</time>
             
 
             
@@ -303,28 +303,28 @@
             <h1 id="近期模板总结"><a href="#近期模板总结" class="headerlink" title="近期模板总结"></a>近期模板总结</h1><hr>
 <ol>
 <li>数据结构<ul>
-<li style="list-style: none"><input type="checkbox" checked> 分块</li>
-<li style="list-style: none"><input type="checkbox" checked> 莫队</li>
-<li style="list-style: none"><input type="checkbox" checked> 可并堆</li>
-<li style="list-style: none"><input type="checkbox" checked> 动态树 LCT</li>
-<li style="list-style: none"><input type="checkbox" checked> hash</li>
-<li style="list-style: none"><input type="checkbox"> treap &amp; splay</li>
-<li style="list-style: none"><input type="checkbox"> K-d 树</li>
-<li style="list-style: none"><input type="checkbox" checked> 主席树</li>
-<li style="list-style: none"><input type="checkbox" checked> 树上并查集</li>
-<li style="list-style: none"><input type="checkbox"> 莫队</li>
+<li>[x] 分块</li>
+<li>[x] 莫队</li>
+<li>[x] 可并堆</li>
+<li>[x] 动态树 LCT</li>
+<li>[x] hash</li>
+<li>[ ] treap &amp; splay</li>
+<li>[ ] K-d 树</li>
+<li>[x] 主席树</li>
+<li>[x] 树上并查集</li>
+<li>[ ] 莫队</li>
 </ul>
 </li>
 <li>图论<ul>
-<li style="list-style: none"><input type="checkbox"> 欧拉回路</li>
-<li style="list-style: none"><input type="checkbox"> 图的割点 桥 连通分量</li>
-<li style="list-style: none"><input type="checkbox"> 2-SAT</li>
-<li style="list-style: none"><input type="checkbox"> 网络流 （有上下界）</li>
-<li style="list-style: none"><input type="checkbox"> 二分图最大(权)匹配</li>
-<li style="list-style: none"><input type="checkbox"> 最大独立集</li>
-<li style="list-style: none"><input type="checkbox"> 最大团</li>
-<li style="list-style: none"><input type="checkbox"> 欧拉回路</li>
-<li style="list-style: none"><input type="checkbox"> 最小树形图</li>
+<li>[ ] 欧拉回路</li>
+<li>[ ] 图的割点 桥 连通分量</li>
+<li>[ ] 2-SAT</li>
+<li>[ ] 网络流 （有上下界）</li>
+<li>[ ] 二分图最大(权)匹配</li>
+<li>[ ] 最大独立集</li>
+<li>[ ] 最大团</li>
+<li>[ ] 欧拉回路</li>
+<li>[ ] 最小树形图</li>
 </ul>
 </li>
 <li>树<ul>
@@ -386,7 +386,7 @@
 <li>插入<br>$merge(top,newnode)$jike</li>
 <li>fast-build-up<br>将所有节点入队，每次取出队首$merge$然后将新树丢进队尾，仅有一棵树时结束此操作</li>
 </ol>
-<p>APIO2012 dispatching<br>给定一棵树$T$，每个点有权值$w_i$，价值$p_i$<br>最大化$ p_i * \sum_{ q } v_{q} $限制为$ \sum_{q} v_q \le M $，其中$q$为$p$的子孙节点。</p>
+<p>APIO2012 dispatching<br>给定一棵树$T$，每个点有权值$w<em>i$，价值$p_i$<br>最大化$ p_i * \sum</em>{ q } v<em>{q} $限制为$ \sum</em>{q} v_q \le M $，其中$q$为$p$的子孙节点。</p>
 <p>对于每一个点建立一个可并堆</p>
 <h3 id="主席树"><a href="#主席树" class="headerlink" title="主席树"></a>主席树</h3><p>给一个 $1 \sim n$的排列${a_n}$进行$q$次操作：<br>交换$a_i$和$a_j$，并求新的排列的逆序对个数。</p>
 <pre><code>即维护一个数据结构，满足：
@@ -409,7 +409,8 @@
 <p>cut操作<br>将一个点作为所在树的根，让另一个点access并splay后，去掉高的一边。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cut</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    mkrt(x);</span><br><span class="line">    </span><br><span class="line">    access(y);</span><br><span class="line">    splay(y);</span><br><span class="line">    fa[c[y][<span class="number">0</span>]]=fa[y];</span><br><span class="line">    fa[y]=<span class="number">0</span>;</span><br><span class="line">    rt[c[y][<span class="number">0</span>]]=<span class="literal">true</span>;</span><br><span class="line">    c[y][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    maintain(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>query操作</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qry</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    mkrt(x);</span><br><span class="line">    func( expose(y) ); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><p>简单的串hash比较常见<br>对树的hash方法<br>考虑有根树<br>$$ hash _ p =e + \sum_{i=1}^{t}  base ^{i} * (( hash_{s_i} \oplus o ) + e)$$<br>对于无根树，找到重心做根，若有两个重心，取hash值小的那个。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hash</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> ff=<span class="number">0</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> hh=oe;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; son; son.clear();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=hd[x];i;i=nxt[i]) <span class="keyword">if</span> (to[i]!=ff)&#123;</span><br><span class="line">		son.push_back( hash(to[i],x) );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	sort(son.begin(),son.end());</span><br><span class="line"></span><br><span class="line">	FOR(i,<span class="number">0</span>,son.size())</span><br><span class="line">		hh = ( (hh * <span class="number">1l</span>l * bs) % mo + (son[i]^ xr) + oe  ) %mo;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> hh;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><p>简单的串hash比较常见<br>对树的hash方法<br>考虑有根树</p>
+<script type="math/tex; mode=display">hash _ p =e + \sum_{i=1}^{t}  base ^{i} * (( hash_{s_i} \oplus o ) + e)</script><p>对于无根树，找到重心做根，若有两个重心，取hash值小的那个。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hash</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> ff=<span class="number">0</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> hh=oe;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; son; son.clear();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=hd[x];i;i=nxt[i]) <span class="keyword">if</span> (to[i]!=ff)&#123;</span><br><span class="line">		son.push_back( hash(to[i],x) );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	sort(son.begin(),son.end());</span><br><span class="line"></span><br><span class="line">	FOR(i,<span class="number">0</span>,son.size())</span><br><span class="line">		hh = ( (hh * <span class="number">1l</span>l * bs) % mo + (son[i]^ xr) + oe  ) %mo;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> hh;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -489,9 +490,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-23T21:01:21+08:00">
-                2018-09-23
-              </time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-23T21:01:21+08:00">2018-09-23</time>
             
 
             
@@ -667,6 +666,8 @@
   <span class="author" itemprop="copyrightHolder">John Doe</span>
 
   
+
+  
 </div>
 
 
@@ -678,7 +679,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
 
 
 
@@ -722,7 +723,9 @@
 
 
 
-  
+
+
+
 
 
 
@@ -742,16 +745,6 @@
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -760,18 +753,13 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
 
 
 
@@ -783,7 +771,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
 
 
 
@@ -836,6 +824,45 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
 
   
 
