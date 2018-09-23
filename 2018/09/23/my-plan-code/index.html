@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="近期模板总结  数据结构  分块  莫队  可并堆  动态树 LCT  hash  treap &amp;amp; splay  K-d 树  主席树  树上并查集  莫队   图论  欧拉回路  图的割点 桥 连通分量  2-SAT  网络流 （有上下界）  二分图最大(权)匹配  最大独立集  最大团  欧拉回路  最小树形图   树 生成树计数 k叉哈弗曼 点分治 树的dfs序   字符串 kmp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my plan &amp; code">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/my-plan-code/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="近期模板总结  数据结构  分块  莫队  可并堆  动态树 LCT  hash  treap &amp;amp; splay  K-d 树  主席树  树上并查集  莫队   图论  欧拉回路  图的割点 桥 连通分量  2-SAT  网络流 （有上下界）  二分图最大(权)匹配  最大独立集  最大团  欧拉回路  最小树形图   树 生成树计数 k叉哈弗曼 点分治 树的dfs序   字符串 kmp">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-23T13:40:28.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="my plan &amp; code">
+<meta name="twitter:description" content="近期模板总结  数据结构  分块  莫队  可并堆  动态树 LCT  hash  treap &amp;amp; splay  K-d 树  主席树  树上并查集  莫队   图论  欧拉回路  图的割点 桥 连通分量  2-SAT  网络流 （有上下界）  二分图最大(权)匹配  最大独立集  最大团  欧拉回路  最小树形图   树 生成树计数 k叉哈弗曼 点分治 树的dfs序   字符串 kmp">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/23/my-plan-code/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>my plan & code | Hexo</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/23/my-plan-code/" itemprop="url">my plan & code</a></h1>
+          <h1 class="post-title" itemprop="name headline">my plan & code</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <h1 id="近期模板总结"><a href="#近期模板总结" class="headerlink" title="近期模板总结"></a>近期模板总结</h1><hr>
+        <h1 id="近期模板总结"><a href="#近期模板总结" class="headerlink" title="近期模板总结"></a>近期模板总结</h1><hr>
 <ol>
 <li>数据结构<ul>
 <li style="list-style: none"><input type="checkbox" checked> 分块</li>
@@ -411,8 +410,6 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qry</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    mkrt(x);</span><br><span class="line">    func( expose(y) ); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><p>简单的串hash比较常见<br>对树的hash方法<br>考虑有根树<br>$$ hash _ p =e + \sum_{i=1}^{t}  base ^{i} * (( hash_{s_i} \oplus o ) + e)$$<br>对于无根树，找到重心做根，若有两个重心，取hash值小的那个。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hash</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> ff=<span class="number">0</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> hh=oe;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; son; son.clear();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=hd[x];i;i=nxt[i]) <span class="keyword">if</span> (to[i]!=ff)&#123;</span><br><span class="line">		son.push_back( hash(to[i],x) );</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	sort(son.begin(),son.end());</span><br><span class="line"></span><br><span class="line">	FOR(i,<span class="number">0</span>,son.size())</span><br><span class="line">		hh = ( (hh * <span class="number">1l</span>l * bs) % mo + (son[i]^ xr) + oe  ) %mo;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> hh;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -429,140 +426,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/23/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-23T21:01:21+08:00">
-                2018-09-23
-              </time>
+              <a href="/2018/09/23/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -572,10 +457,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -583,6 +469,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -603,8 +493,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -646,6 +545,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#近期模板总结"><span class="nav-number">1.</span> <span class="nav-text">近期模板总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据结构"><span class="nav-number">1.1.</span> <span class="nav-text">1.数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分块算法"><span class="nav-number">1.1.1.</span> <span class="nav-text">分块算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左偏树"><span class="nav-number">1.1.2.</span> <span class="nav-text">左偏树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主席树"><span class="nav-number">1.1.3.</span> <span class="nav-text">主席树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带权并查集"><span class="nav-number">1.1.4.</span> <span class="nav-text">带权并查集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态树"><span class="nav-number">1.1.5.</span> <span class="nav-text">动态树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash"><span class="nav-number">1.1.6.</span> <span class="nav-text">hash</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -779,6 +694,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
