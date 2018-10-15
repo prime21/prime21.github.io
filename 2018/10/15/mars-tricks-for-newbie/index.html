@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="TC/CF/CC handle : prime21">
+<meta name="description" content="2018Oct  Holiday with my girlfriend  logisim  learning  MIPS learning  Prepare for template code  ACM-ICPC Nanjing Onsite 10.13 ~ 10.14  [ Au ]   ACM-ICPC XuZhou Onsite 10.27 ~ 10.28  Probability lear">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://prime21.github.io/about/index.html">
+<meta property="og:title" content="schedule">
+<meta property="og:url" content="https://prime21.github.io/schedule/index.html">
 <meta property="og:site_name" content="prime21">
-<meta property="og:description" content="TC/CF/CC handle : prime21">
+<meta property="og:description" content="2018Oct  Holiday with my girlfriend  logisim  learning  MIPS learning  Prepare for template code  ACM-ICPC Nanjing Onsite 10.13 ~ 10.14  [ Au ]   ACM-ICPC XuZhou Onsite 10.27 ~ 10.28  Probability lear">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-15T13:36:15.120Z">
+<meta property="og:updated_time" content="2018-10-15T02:12:18.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="TC/CF/CC handle : prime21">
+<meta name="twitter:title" content="schedule">
+<meta name="twitter:description" content="2018Oct  Holiday with my girlfriend  logisim  learning  MIPS learning  Prepare for template code  ACM-ICPC Nanjing Onsite 10.13 ~ 10.14  [ Au ]   ACM-ICPC XuZhou Onsite 10.27 ~ 10.28  Probability lear">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="https://prime21.github.io/about/"/>
+  <link rel="canonical" href="https://prime21.github.io/schedule/"/>
 
 
 
@@ -343,6 +343,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">cnt=0</span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">	./mkdt &gt; input.txt</span><br><span class="line">	./std &lt; input.txt &gt; ans.txt</span><br><span class="line">	java -jar ../Mars4_5.jar nc 100000 code.asm &lt; input.txt &gt; output.txt</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> diff -w ans.txt output.txt ; </span><br><span class="line">	<span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"AC on"</span> $((++cnt))</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"WA"</span></span><br><span class="line">		<span class="built_in">break</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>I think it may be helpful for newbie, to get the hack test for his/her code. You can get other command MARS in the help document.</p>
 <p>Thanks my senior schoolmate (Chielo), tell me some tricks in Macros. （it’s similar with the meta-programming or define in other language）</p>
+<figure class="highlight mips"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">.data</span></span><br><span class="line"><span class="symbol">space:</span>	.asciiz <span class="string">" "</span></span><br><span class="line"><span class="symbol">endl:</span>	.asciiz <span class="string">"\n"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">.macro</span> print(%val)</span><br><span class="line">	li $<span class="built_in">v0</span>,<span class="number">1</span></span><br><span class="line">	<span class="keyword">add </span>$<span class="built_in">a0</span>,$<span class="number">0</span>,%val</span><br><span class="line">	<span class="keyword">syscall</span></span><br><span class="line"><span class="keyword">.end_macro</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">.macro </span>print_str(%str)</span><br><span class="line">	li $<span class="built_in">v0</span>,<span class="number">4</span></span><br><span class="line">	la $<span class="built_in">a0</span>,%str</span><br><span class="line">	<span class="keyword">syscall</span></span><br><span class="line"><span class="keyword">.end_macro</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">.macro </span>return_0()</span><br><span class="line">	li $<span class="built_in">v0</span>,<span class="number">10</span></span><br><span class="line">	<span class="keyword">syscall</span></span><br><span class="line"><span class="keyword">.end_macro</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">.macro </span>rep_macro(%reg_iter,%from,%to,%<span class="keyword">body_macro)</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">add </span>%reg_iter,$<span class="number">0</span>,%from</span><br><span class="line"><span class="symbol">	st_rep:</span></span><br><span class="line">	<span class="keyword">bge </span>%reg_iter,%to,ed_rep</span><br><span class="line">	%<span class="keyword">body_macro()</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">add </span>%reg_iter,%reg_iter,<span class="number">1</span></span><br><span class="line">	<span class="keyword">j </span>st_rep</span><br><span class="line"><span class="symbol">	ed_rep:</span></span><br><span class="line">.end_macro</span><br><span class="line"></span><br><span class="line"><span class="meta">.macro</span> <span class="keyword">swap($v_1,$v_2)</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">add </span>$v_1,$v_1,$v_2</span><br><span class="line">	<span class="keyword">sub </span>$v_2,$v_1,$v_2</span><br><span class="line">	<span class="keyword">sub </span>$v_1,$v_1,$v_2</span><br><span class="line">.end_macro</span><br></pre></td></tr></table></figure>
 
       
     </div>
