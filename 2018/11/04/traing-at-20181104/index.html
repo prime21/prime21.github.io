@@ -124,7 +124,7 @@
 
 
 
-  <title>标签: computer architecture | prime21</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>traing_at_20181104 | prime21</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -143,7 +143,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,54 +267,221 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>computer architecture<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2018/11/04/traing-at-20181104/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="prime21">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="prime21">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/18/logisim/" itemprop="url">
-              
-                <span itemprop="name">logisim</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">traing_at_20181104</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-18T10:42:18+08:00"
-              content="2018-10-18" >
-          10-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T14:20:23+08:00">2018-11-04</time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://vjudge.net/contest/266913" target="_blank" rel="noopener">traing #1</a></p>
+<p>Time: 9am-12am</p>
+<p>Status:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">prob</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">00:59:52</td>
+<td style="text-align:center">00:36:16</td>
+<td style="text-align:center">01:24:37</td>
+<td style="text-align:center">opened</td>
+<td style="text-align:center">02:37:34(-2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>D: finished </p>
+<a id="more"></a>
+<h2 id="A-Codeforces-382C"><a href="#A-Codeforces-382C" class="headerlink" title="A (Codeforces 382C)"></a>A (Codeforces 382C)</h2><p>Arithmetic Progression: 给一个数列$A_n$，加一个数使得新数列为等差数列，求所有方案。$n \in [1,10^5]$</p>
+<p>分类讨论题</p>
+<ul>
+<li><p>Case1 : $n=1$ , $ans= \infty$</p>
+</li>
+<li><p>Case2 : $n=2$ , 有三种情况，在前面/中间/后面放一个数</p>
+</li>
+<li><p>Case3 : $n=3$ , 如果是等差数列，可以放头尾，此外可以尝试放在12中间或者23中间。</p>
+</li>
+<li><p>Case4 : $n&gt;3$, 记差分序列为$D_n = A_{n+1} - A_n$。如果差分序列的值仅有一种证明是等差，那么同样可以放头尾，如果差分序列的值有两种，其中有一种只出现过一次，则尝试在那个差分位置中间加一个数，否则无解</p>
+</li>
+</ul>
+<p>所有情况均记得去重。</p>
+<h2 id="B-Codeforces-380B"><a href="#B-Codeforces-380B" class="headerlink" title="B (Codeforces 380B)"></a>B (Codeforces 380B)</h2><p>Sereja and Tree: 给出一种树的生成方式，支持以下操作：</p>
+<ol>
+<li>$t$ $l$ $r$ $x$ 对$t$层的$l$,$r$加上一种颜色$x$</li>
+<li>$t$ $v$ 查询$t$层$v$点的子树内的颜色个数</li>
+</ol>
+<p>$n,m \le 7000$</p>
+<p>竟然可以直接暴力。</p>
+<h2 id="C-Codeforces-383C"><a href="#C-Codeforces-383C" class="headerlink" title="C (Codeforces 383C)"></a>C (Codeforces 383C)</h2><p>数据结构老题：对树上一个点的权值$\oplus (val)$定义为对其本身$+ val$，所有儿子$\oplus (-val)$.</p>
+<p>支持以下两种操作:</p>
+<ol>
+<li>$x$ $val$ 对$x$点做$\oplus (val)$</li>
+<li><p>$x$ 查询$x$的权值</p>
+<p> 每个点的影响范围是一棵子树，dfs序映射到一棵子树，对于深度分奇偶发现可以用两颗线段树维护</p>
+</li>
+</ol>
+<h2 id="D-Codeforces-386D"><a href="#D-Codeforces-386D" class="headerlink" title="D (Codeforces 386D)"></a>D (Codeforces 386D)</h2><p>出题人可能语死早，给一个边被染色的完全图$G=(V,E)$，现在有三个石子在图上，当一个石子沿着边移动时，他能选择的边需要满足条件：</p>
+<ol>
+<li>与其所在节点相连</li>
+<li>与另外两个点相连的边同色</li>
+</ol>
+<p>问最少移动多少次可以使得三个石子分别在$1,2,3$(石子之间无差别)，并输出方案</p>
+<p>$ |V| \le 70 $</p>
+<p>状态图只有$\binom{70}{3}=54740$种，状态直接的代价都是$1$，在状态图上bfs即可。</p>
+<h2 id="E-Codeforces-385D"><a href="#E-Codeforces-385D" class="headerlink" title="E (Codeforces 385D)"></a>E (Codeforces 385D)</h2><p>一个人想沿着$x$轴从$(l,0)$到$(r,0)$，现在有$n$盏路灯，已知其坐标$(x_i,y_i)$和可以照亮的角度$\alpha_i$，你可以适当调整每一盏的灯的朝向，你只能走在被照亮的地方。</p>
+<p>$n \le 20$</p>
+<p>注意到$n$很小，可以直接写出$O(n * 2^n)$的暴力dp。转移是一个几何问题。</p>
+<p>My code:<br><a href="/2018/11/04/traing-at-20181104/A.cpp" title="A.cpp">A.cpp</a><br><a href="/2018/11/04/traing-at-20181104/B.cpp" title="B.cpp">B.cpp</a><br><a href="/2018/11/04/traing-at-20181104/C.cpp" title="C.cpp">C.cpp</a><br><a href="/2018/11/04/traing-at-20181104/D.cpp" title="D.cpp">D.cpp</a><br><a href="/2018/11/04/traing-at-20181104/E.cpp" title="E.cpp">E.cpp</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/code/" rel="tag"># code</a>
+          
+            <a href="/tags/segment-tree/" rel="tag"># segment tree</a>
+          
+            <a href="/tags/training/" rel="tag"># training</a>
+          
+            <a href="/tags/geometry/" rel="tag"># geometry</a>
+          
+            <a href="/tags/bfs/" rel="tag"># bfs</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/03/the-3th-contest-solution/" rel="next" title="the-3rd-contest-solution">
+                <i class="fa fa-chevron-left"></i> the-3rd-contest-solution
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -322,6 +489,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -342,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -394,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Codeforces-382C"><span class="nav-number">1.</span> <span class="nav-text">A (Codeforces 382C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Codeforces-380B"><span class="nav-number">2.</span> <span class="nav-text">B (Codeforces 380B)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Codeforces-383C"><span class="nav-number">3.</span> <span class="nav-text">C (Codeforces 383C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Codeforces-386D"><span class="nav-number">4.</span> <span class="nav-text">D (Codeforces 386D)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Codeforces-385D"><span class="nav-number">5.</span> <span class="nav-text">E (Codeforces 385D)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -516,6 +712,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
 
   
 
