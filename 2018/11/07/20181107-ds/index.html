@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="," />
 
 
 
@@ -75,17 +75,18 @@
 
 
 
-<meta name="description" content="TC/CF/CC handle : prime21">
+<meta name="description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
+<meta name="keywords" content="life">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://prime21.github.io/about/index.html">
+<meta property="og:title" content="lover">
+<meta property="og:url" content="https://prime21.github.io/lover/index.html">
 <meta property="og:site_name" content="prime21">
-<meta property="og:description" content="TC/CF/CC handle : prime21">
+<meta property="og:description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-15T13:36:15.120Z">
+<meta property="og:updated_time" content="2018-10-15T13:37:47.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="TC/CF/CC handle : prime21">
+<meta name="twitter:title" content="lover">
+<meta name="twitter:description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
 
 
 
@@ -117,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://prime21.github.io/about/"/>
+  <link rel="canonical" href="https://prime21.github.io/lover/"/>
 
 
 
@@ -380,6 +381,10 @@
 <li>case 2<br>  $lca(root,x) \ne x$<br>  此时修改和$x$的查询与其无关</li>
 <li>case 3<br>  $lca(root,x) == x$<br>  此时修改是找到$x$的所有儿子中，包含$root$的那个</li>
 </ul>
+<h2 id="SEABAL"><a href="#SEABAL" class="headerlink" title="SEABAL"></a>SEABAL</h2><p>有$n$个盒子里面有气球。<br>有$k$次操作，每次删除一个盒子中的一个气球<br>有$m$个区间，每次操作后，询问有多少个区间全部为空。<br>$n \in [1,100000] $</p>
+<p>每个区间询问被考虑成$S(R)-S(L-1)=0$的形式<br>那么当i所在的块被删除的时候，查询一下左端点在 ( L[i] , i] ，右端点在 [i,R[i] )的区间。<br>这样就是一个简单主席树了</p>
+<h2 id="hdu-4366"><a href="#hdu-4366" class="headerlink" title="hdu 4366"></a>hdu 4366</h2><p>一棵树，每个点有两个值$p$和$v$，做如下子树查询$T(x)$</p>
+<script type="math/tex; mode=display">\max _ { son \in  T(x) }  \{ v _ {son} * [ p _ {son}  > p _ {x}]  \}</script><p>按照$p$从大到小，当做插入的时间序列，用dfs序将子树问题划归为线段问题。<br>对于每次查询，相当于查询子树内的最大的$v$<br>在$v$为权值,$p$为时间的主席树上二分一下，复杂度是$n \log n$的</p>
 <p>都是口胡的摸了</p>
 
       
@@ -428,6 +433,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/14/Algorithmic-Game-Theory/" rel="prev" title="Algorithmic Game Theory">
+                Algorithmic Game Theory <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -504,7 +513,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -517,7 +526,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -550,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#XRQRS"><span class="nav-number">1.</span> <span class="nav-text">XRQRS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POJ-3580"><span class="nav-number">2.</span> <span class="nav-text">POJ 3580</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PRIMEDST"><span class="nav-number">3.</span> <span class="nav-text">PRIMEDST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HDU-4821"><span class="nav-number">4.</span> <span class="nav-text">HDU 4821</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BZOJ-3083"><span class="nav-number">5.</span> <span class="nav-text">BZOJ 3083</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#XRQRS"><span class="nav-number">1.</span> <span class="nav-text">XRQRS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POJ-3580"><span class="nav-number">2.</span> <span class="nav-text">POJ 3580</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PRIMEDST"><span class="nav-number">3.</span> <span class="nav-text">PRIMEDST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HDU-4821"><span class="nav-number">4.</span> <span class="nav-text">HDU 4821</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BZOJ-3083"><span class="nav-number">5.</span> <span class="nav-text">BZOJ 3083</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEABAL"><span class="nav-number"></span> <span class="nav-text">SEABAL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdu-4366"><span class="nav-number"></span> <span class="nav-text">hdu 4366</span></a></div>
             
 
           </div>
