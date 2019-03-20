@@ -123,7 +123,7 @@
 
 
 
-  <title>watch the fine-grained information in mars | prime21</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>OO unit1 summary | prime21</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2018/12/03/watch-the-fine-grained-information-in-mars/">
+    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2019/03/19/OO-unit1-summary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="prime21">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">watch the fine-grained information in mars</h1>
+          <h1 class="post-title" itemprop="name headline">OO unit1 summary</h1>
         
 
         <div class="post-meta">
@@ -309,7 +309,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T10:43:30+08:00">2018-12-03</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T06:42:32+08:00">2019-03-19</time>
             
 
             
@@ -326,9 +326,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/03/watch-the-fine-grained-information-in-mars/#comments" itemprop="discussionUrl">
+                <a href="/2019/03/19/OO-unit1-summary/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/12/03/watch-the-fine-grained-information-in-mars/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/03/19/OO-unit1-summary/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -356,32 +356,75 @@
       
 
       
-        <p>Get the fine-grained information to check your own CPU working.</p>
-<a id="more"></a>
-<p>由于你校的讨论区的layout实在是不忍直视。（一个Markdown非完全体让人QAQ）</p>
-<p>介绍一下如何得到想要的细粒度的输出，完全体的伸手党福利啊!</p>
-<h2 id="前置需求"><a href="#前置需求" class="headerlink" title="前置需求"></a>前置需求</h2><ol>
-<li>一款正常的解压软件</li>
-<li>java环境</li>
-<li>一台电脑</li>
+        <h2 id="OO-篇"><a href="#OO-篇" class="headerlink" title="OO 篇"></a>OO 篇</h2><ol>
+<li>接口和继承</li>
 </ol>
-<h2 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h2><p><code>Mars.jar</code>本质上是一个压缩包，先解压<code>Mars.jar</code></p>
-<blockquote>
-<p>unzip Mars.jar</p>
-</blockquote>
-<h2 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h2><p>打开解压的文件夹将文件夹下的一下两个文件替换成魔改好的。</p>
-<p>文件位置是</p>
-<blockquote>
-<p>../mars/mips/hardware/RegisterFile.java<br>../mars/mips/hardware/Memory.java</p>
-</blockquote>
-<p>魔改文件在这里:<br><a href="/2018/12/03/watch-the-fine-grained-information-in-mars/RegisterFile.java" title="RegisterFile.java">RegisterFile.java</a><br><a href="/2018/12/03/watch-the-fine-grained-information-in-mars/Memory.java" title="Memory.java">Memory.java</a></p>
-<h2 id="step-3"><a href="#step-3" class="headerlink" title="step 3"></a>step 3</h2><p><strong>返回到解压后文件夹的根目录</strong></p>
-<p>在根目录，命令行模式下运行下面两行代码</p>
-<blockquote>
-<p>javac mars/mips/hardware/RegisterFile.java<br>javac mars/mips/hardware/Memory.java</p>
-</blockquote>
-<h2 id="step-4"><a href="#step-4" class="headerlink" title="step 4"></a>step 4</h2><p>在根目录下找到<code>CreateMarsJar.bat</code><br>得到新的Mars，即为魔改好的</p>
-<h2 id="upd"><a href="#upd" class="headerlink" title="upd"></a>upd</h2><p>最新的魔改版本的Mars在这里<br><a href="/2018/12/03/watch-the-fine-grained-information-in-mars/Mars_debug_prime21.jar" title="Mars_debug_prime21.jar">Mars_debug_prime21.jar</a></p>
+<p>在《Head First 设计模式》中，特意说明，一些 <em>接口</em> 实质上是不区别具体实现是<code>父类继承</code>或者是<code>接口继承</code>的，即好的 <em>接口</em> 设计，是与具体的硬编程实现分离的，好的接口可能用<code>implements</code>实现，也有可能用<code>extends</code>实现。</p>
+<pre><code>多用组合，少用继承
+</code></pre><p>在接口的实现上，巧妙的解决了多继承问题。即使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> <span class="keyword">implements</span> <span class="title">if1</span>, <span class="title">inf2</span>, <span class="title">inf3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">if1able</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">if1able</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">if1able</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使得代码既可以有类似继承的关系，也有组合式的松耦合特性。</p>
+<ol>
+<li><p>设计模式</p>
+<ul>
+<li><p>策略模式<br>策略模式是一个值得很早学习的<code>Design Pattern</code>，他强调一下两点</p>
+<ol>
+<li>封装变化的概念（定义对象中变化的策略）</li>
+<li><p>使用接口而不是具体的实现类，面向接口编程</p>
+<p>把不同的情形封装起来，是考虑到，对象的需求可能是常常可变的，对于不同的需求应当有不同的实现。比如关于化简这个概念，当表达式求导之后，其实可能返回了与本身不同子类型的对象，此时再使用化简操作，就应该用求导返回值对应的化简方法。</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>语法技巧</p>
+<ul>
+<li><p>instanceof<br>为了使用多态，用同一个容器存放不同的表达式，所有的求导方法和化简方法将会放回同一个接口，为了确定具体接口采用具体的方法，我们偶尔要使用<code>instanceof</code></p>
+</li>
+<li><p>hashCode &amp; equals<br>在第二次作业后，大家开始编写自己的hashCode和equals来实现hashMap之类的容器。这里推荐一些常见的hash函数:</p>
+<ul>
+<li><p>序列hash</p>
+<script type="math/tex; mode=display">H_n = (H_{n-1} * base + a_n ) \bmod mo</script></li>
+<li><p>树hash</p>
+<script type="math/tex; mode=display">T_n =  (p_n + \oplus_{son} T_son ) \bmod mo</script><p>对于树的hash实质上是要消除，左右子树的不对称性，故可以尝试使用$min,max$二元组,$xor$的运算方式解决这种不确定性。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Algo-篇"><a href="#Algo-篇" class="headerlink" title="Algo 篇"></a>Algo 篇</h2><ol>
+<li><p>递归下降篇<br>递归下降是在第二、三次作业中出现的一种对于 <strong>文法明确的输入进行解析的一种通用方式</strong> ，对于此</p>
+</li>
+<li><p>表达式树<br>一个具有可扩展性的表达式树是什么样子的呢？个人认为至少要是一个可追溯状态的多叉表达式树。</p>
+</li>
+</ol>
+<p>为了这一点，我特意让加法节点和乘法节点具有多叉的性质，即使用变长数组存储左孩子，这个idea来自于Wolfram Alpha的教程图</p>
+<p><img src="https://reference.wolfram.com/language/tutorial/Files/ExpressionsAsTrees.zh/O_2.png" alt="Wolfram Alpha Expression Tree"></p>
+<p>变长数组的左孩子有一系列的好处，可以并行的管理多个子树的化简工作。</p>
+<ol>
+<li>expand-simplify<br>关于优化，有很多小的trick，据说实现了这些就可以得到一个理想的分数:<ul>
+<li>解决<code>*0</code>、<code>*1</code>、<code>+1</code>、<code>-1</code>等特殊的输出问题。</li>
+<li>解决合并同类项</li>
+<li>解决幂函数的合并</li>
+<li>$\sin^2(x) + \cos^2(x) = 1$ 之类的恒等式化简</li>
+</ul>
+</li>
+</ol>
+<p>一种比较复杂的化简技巧是，先把所有的项展开，展开成若干乘积项的和，在进行化简操作。</p>
+<p>这里的化简可以写一个hash函数表示乘积项，对于不同子类的乘积，利用hash函数进行提取公因式合并，最后得到化简结果</p>
+<h2 id="generate-篇"><a href="#generate-篇" class="headerlink" title="generate 篇"></a>generate 篇</h2><ul>
+<li><p>自我指涉output文法分析<br>一个简易的检查自己output是否符合文法的办法就是，把输出作为输入重新定向到<code>Syntax Handler</code>去重新检查语法。</p>
+</li>
+<li><p>简单数据生成算法<br>简单的数据生成主要是使用正则表达式。</p>
+</li>
+</ul>
+<p>python有库<code>xeger</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> xeger <span class="keyword">import</span> Xeger</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = Xeger(limit=<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x.xeger(<span class="string">"[0-9]+"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>可能你想不到，其实java也有<code>xeger</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String rege = <span class="string">"[ab]&#123;4,6&#125;c"</span>;</span><br><span class="line">Xeger generator = <span class="keyword">new</span> Xeger(regex);</span><br><span class="line">String result = generator.generate();</span><br><span class="line"><span class="keyword">assert</span> result.matches(regex);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>语法树扩展生成<br>注意到，大量的文法判断失败均是由于判断的文法变为了原文法的超集，所以我们不妨先建立出满足题意的语法树，每次在语法树上利用正则表达式生成单元的时候随机生成扰动，就能制造出，与你的分析模式近似但是可能不合法的奇怪数据。</li>
+</ul>
 
       
     </div>
@@ -397,16 +440,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/mips/" rel="tag"># mips</a>
-          
-            <a href="/tags/computer-architecture/" rel="tag"># computer architecture</a>
-          
-            <a href="/tags/cpu/" rel="tag"># cpu</a>
-          
-        </div>
-      
 
       
       
@@ -416,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/02/Goodbye-Intro-to-Programming-from-a-TA-perspective/" rel="next" title="Goodbye Intro to Programming (from a TA perspective)">
-                <i class="fa fa-chevron-left"></i> Goodbye Intro to Programming (from a TA perspective)
+              <a href="/2019/02/28/FengRu-Apk-Download/" rel="next" title="FengRu_Apk_Download">
+                <i class="fa fa-chevron-left"></i> FengRu_Apk_Download
               </a>
             
           </div>
@@ -425,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/24/Shi-Story/" rel="prev" title="Shi_Story">
-                Shi_Story <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -561,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前置需求"><span class="nav-number">1.</span> <span class="nav-text">前置需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-1"><span class="nav-number">2.</span> <span class="nav-text">step 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-2"><span class="nav-number">3.</span> <span class="nav-text">step 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-3"><span class="nav-number">4.</span> <span class="nav-text">step 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step-4"><span class="nav-number">5.</span> <span class="nav-text">step 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upd"><span class="nav-number">6.</span> <span class="nav-text">upd</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OO-篇"><span class="nav-number">1.</span> <span class="nav-text">OO 篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algo-篇"><span class="nav-number">2.</span> <span class="nav-text">Algo 篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generate-篇"><span class="nav-number">3.</span> <span class="nav-text">generate 篇</span></a></li></ol></div>
             
 
           </div>
@@ -713,9 +742,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://prime21.github.io/2018/12/03/watch-the-fine-grained-information-in-mars/';
-          this.page.identifier = '2018/12/03/watch-the-fine-grained-information-in-mars/';
-          this.page.title = 'watch the fine-grained information in mars';
+          this.page.url = 'https://prime21.github.io/2019/03/19/OO-unit1-summary/';
+          this.page.identifier = '2019/03/19/OO-unit1-summary/';
+          this.page.title = 'OO unit1 summary';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-prime21-github-io.disqus.com/embed.js';
