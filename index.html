@@ -391,7 +391,7 @@
 <li><p>序列hash</p>
 <script type="math/tex; mode=display">H_n = (H_{n-1} * base + a_n ) \bmod mo</script></li>
 <li><p>树hash</p>
-<script type="math/tex; mode=display">T_n =  (p_n + \oplus_{son} T_son ) \bmod mo</script><p>对于树的hash实质上是要消除，左右子树的不对称性，故可以尝试使用$min,max$二元组,$xor$的运算方式解决这种不确定性。</p>
+<script type="math/tex; mode=display">T_n =  (p_n + \bigoplus_{son} T_{son} ) \bmod mo</script><p>对于树的hash实质上是要消除，左右子树的不对称性，故可以尝试使用$min,max$二元组,$xor$的运算方式解决这种不确定性。</p>
 </li>
 </ul>
 </li>
