@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="," />
 
 
 
@@ -75,17 +75,18 @@
 
 
 
-<meta name="description" content="TC/CF/CC handle : prime21">
+<meta name="description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
+<meta name="keywords" content="life">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://prime21.github.io/about/index.html">
+<meta property="og:title" content="lover">
+<meta property="og:url" content="https://prime21.github.io/lover/index.html">
 <meta property="og:site_name" content="prime21">
-<meta property="og:description" content="TC/CF/CC handle : prime21">
+<meta property="og:description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-15T13:36:15.120Z">
+<meta property="og:updated_time" content="2018-10-15T13:37:47.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="TC/CF/CC handle : prime21">
+<meta name="twitter:title" content="lover">
+<meta name="twitter:description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
 
 
 
@@ -117,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://prime21.github.io/about/"/>
+  <link rel="canonical" href="https://prime21.github.io/lover/"/>
 
 
 
@@ -267,6 +268,272 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2019/03/22/BCPC-2018-2019-solution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="prime21">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="prime21">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/BCPC-2018-2019-solution/" itemprop="url">BCPC 2018/2019 solution</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T12:35:22+08:00">2019-03-22</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/22/BCPC-2018-2019-solution/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/03/22/BCPC-2018-2019-solution/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Ange的DNA自动机"><a href="#Ange的DNA自动机" class="headerlink" title="Ange的DNA自动机"></a>Ange的DNA自动机</h2><p>注意到四阶群只有两个，循环群和Klein群。</p>
+<p>而题目中描述的矩阵，正是Klein群的矩阵表示，注意到Klein群是可交换的非循环群。我们仅考虑他的基本性质，结合律。</p>
+<p>事实上，只要 <strong>验证所给的运算是满足结合律的</strong>，可以进行倍增，方案如下:</p>
+<p>记$b_i^{k}$ 表示第$k$次运算后第$i$个位置的结果，那么</p>
+<script type="math/tex; mode=display">b_i^{2^s} = b_i^{2^{s-1}} \times b_{i+2^{s-1}}^{2^{s-1}}</script><p>事实上，Klein群的乘法表是：</p>
+<blockquote>
+<p>x 0 1 2 3<br>0 0 1 2 3<br>1 1 0 3 2<br>2 2 3 0 1<br>3 3 2 1 0</p>
+</blockquote>
+<p>其实是简单的异或运算…</p>
+<p>对于每组数据的时间复杂度$O(n \log n)$或$O(\frac{n \log n}{64})$，时限充足是标程的三倍，验题人的五倍。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2019/03/22/OO-blog-Homework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="prime21">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="prime21">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/22/OO-blog-Homework/" itemprop="url">OO-blog-Homework</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T06:12:04+08:00">2019-03-22</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/22/OO-blog-Homework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/03/22/OO-blog-Homework/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1391,269 +1658,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2018/12/02/Goodbye-Intro-to-Programming-from-a-TA-perspective/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="prime21">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="prime21">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/02/Goodbye-Intro-to-Programming-from-a-TA-perspective/" itemprop="url">Goodbye Intro to Programming (from a TA perspective)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-02T19:58:28+08:00">2018-12-02</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/02/Goodbye-Intro-to-Programming-from-a-TA-perspective/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/12/02/Goodbye-Intro-to-Programming-from-a-TA-perspective/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在本文的最后有我的出的所有的数据和标程，以及期末模拟一的题解。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/02/Goodbye-Intro-to-Programming-from-a-TA-perspective/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://prime21.github.io/2018/11/19/Probability-Statistics-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="prime21">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="prime21">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/19/Probability-Statistics-1/" itemprop="url">Probability & Statistics #1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T11:11:36+08:00">2018-11-19</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/19/Probability-Statistics-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/11/19/Probability-Statistics-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>$X$若满足分布律，$P(X=x_k) = p_k$,则$\sum_{k=1}^{n} x_k p_k$ 称之为$X$的数学期望，记做$E(X)=EX=\sum_{k=1}^{n} x_k p_k$</p>
-<h3 id="特殊期望"><a href="#特殊期望" class="headerlink" title="特殊期望"></a>特殊期望</h3><p>$E(X)$ ——$X$的$k$阶原点矩<br>$E(|X|)$ ——$X$的$k$阶绝对原点矩<br>$E( (X-E(X))^k  )$ ——$X$的$k$阶中心矩 ，$k=2$时为方差$D(X)$<br>二阶混合中心距，协方差<br>相关系数</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1704,7 +1708,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
