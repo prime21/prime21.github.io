@@ -370,6 +370,40 @@
 <li><p>Killer Algorithm (My solution)<br>  This is my solution for this problem… 性能效果一般，但是处于<code>Quality of Service</code>的角度考虑的算法。</p>
 </li>
 </ul>
+<h2 id="关于动态规划和强化学习的考虑模型"><a href="#关于动态规划和强化学习的考虑模型" class="headerlink" title="关于动态规划和强化学习的考虑模型"></a>关于动态规划和强化学习的考虑模型</h2><h3 id="个人实现"><a href="#个人实现" class="headerlink" title="个人实现"></a>个人实现</h3><pre><code>**在最后一次**，多人电梯的调度中，我尝试考量了采取**动态规划**调度总路径的方式，静态的去逼近这个界，但是效果不明显，而且存在部分bug，保险起见交了简易算法，经过后续修改，彻底解决了这个问题，在跑分上超过了很多普通的`Group System Control`的方式，主要的考察平均等待时间`ave_time`，最终结算时间`max_time`，最长等待队列`max_queue`。
+</code></pre><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">parameter</th>
+<th style="text-align:center">ave_time</th>
+<th style="text-align:center">max_time</th>
+<th style="text-align:center">max_queue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">dp algo</td>
+<td style="text-align:center">$50.3\%$</td>
+<td style="text-align:center">$80.0 \%$</td>
+<td style="text-align:center">$31.3 \%$</td>
+</tr>
+<tr>
+<td style="text-align:center">killer algo</td>
+<td style="text-align:center">$33.3\%$</td>
+<td style="text-align:center">$10.3 \%$</td>
+<td style="text-align:center">$51.2 \%$</td>
+</tr>
+<tr>
+<td style="text-align:center">als algor</td>
+<td style="text-align:center">$26.3\%$</td>
+<td style="text-align:center">$ 12.1 \% $</td>
+<td style="text-align:center">$22.3 \%$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以发现在等待时间上两个指标都非常好。超过了原来的版本。</p>
 <h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>和助教讨论的阶段，我有以下收获，电梯调度是一个经典组合优化问题，优化的目标很多，前面的不少探讨都是按照MWT(Maximum wait time)做考量的，其实还有以下参量:</p>
 <ul>
 <li>Maximum wait time</li>
@@ -378,6 +412,10 @@
 <li>Energy cost</li>
 <li>Expecte length of queue</li>
 </ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>A smart elevator scheduler that considers dynamic changes of energy cost and user traffic</li>
+<li>Improving Elevator Performance Using Reinforcement Learning</li>
+</ol>
 
           
         
