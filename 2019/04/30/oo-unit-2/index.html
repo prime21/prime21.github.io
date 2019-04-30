@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -75,18 +75,17 @@
 
 
 
-<meta name="description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
-<meta name="keywords" content="life">
+<meta name="description" content="TC/CF/CC handle : prime21">
 <meta property="og:type" content="website">
-<meta property="og:title" content="lover">
-<meta property="og:url" content="https://prime21.github.io/lover/index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://prime21.github.io/about/index.html">
 <meta property="og:site_name" content="prime21">
-<meta property="og:description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
+<meta property="og:description" content="TC/CF/CC handle : prime21">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-15T13:37:47.322Z">
+<meta property="og:updated_time" content="2018-10-15T13:36:15.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lover">
-<meta name="twitter:description" content="重要的句子大写 I love Ange  I love Ange不选无效一个式子: $ \rho = a ( 1 - \sin \theta ) $">
+<meta name="twitter:title" content="about">
+<meta name="twitter:description" content="TC/CF/CC handle : prime21">
 
 
 
@@ -118,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="https://prime21.github.io/lover/"/>
+  <link rel="canonical" href="https://prime21.github.io/about/"/>
 
 
 
@@ -357,7 +356,23 @@
       
 
       
-        <h2 id="电梯优化之道"><a href="#电梯优化之道" class="headerlink" title="电梯优化之道"></a>电梯优化之道</h2><p>优化是Elevator Scheduling 问题本身一个非常有趣的方面</p>
+        <h2 id="电梯优化之道"><a href="#电梯优化之道" class="headerlink" title="电梯优化之道"></a>电梯优化之道</h2><p>优化是Elevator Scheduling 问题本身一个非常有趣的方面。在这个方面可以先讨论一些和本次无关的一些优化大方向</p>
+<h2 id="常见算法粗略比较"><a href="#常见算法粗略比较" class="headerlink" title="常见算法粗略比较"></a>常见算法粗略比较</h2><ul>
+<li>Nearest Elevator<br>  这个算法在强测阶段非常吃亏，不知道是为什么，有可能是因为数据很随机，和自然电梯需求分布不同。比较常见的问题是 <strong>饥饿现象</strong> 。</li>
+<li>Fuzzy Elevator System Control<br>  模糊的电梯调度模式能够比较方便的解决在若干参量上判定电梯应该走向什么取向，在不少决策上的灵敏度比其他的算法要高，可以 <strong>实现更加复杂的场景下的优化</strong>。</li>
+<li><p>ALS (A little Simple)<br>  这个算法只在指导书上见过，不过很有作用，仅仅是加入了捎带和主请求限制，避免了饥饿性，是一个<strong>保证比傻瓜调度优</strong>的算法。</p>
+</li>
+<li><p>Killer Algorithm (My solution)<br>  This is my solution for this problem… 性能效果一般，但是处于<code>Quality of Service</code>的角度考虑的算法。</p>
+</li>
+</ul>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>和助教讨论的阶段，我有以下收获，电梯调度是一个经典组合优化问题，优化的目标很多，前面的不少探讨都是按照MWT(Maximum wait time)做考量的，其实还有以下参量:</p>
+<ul>
+<li>Maximum wait time</li>
+<li>Expected wait time of users in the system</li>
+<li>Quality of Service</li>
+<li>Energy cost</li>
+<li>Expecte length of queue</li>
+</ul>
 
       
     </div>
@@ -523,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#电梯优化之道"><span class="nav-number">1.</span> <span class="nav-text">电梯优化之道</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#电梯优化之道"><span class="nav-number">1.</span> <span class="nav-text">电梯优化之道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见算法粗略比较"><span class="nav-number">2.</span> <span class="nav-text">常见算法粗略比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a></li></ol></div>
             
 
           </div>
