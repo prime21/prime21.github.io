@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="2018Oct  Holiday with my girlfriend  logisim  learning  MIPS learning  Prepare for template code [Half done]  ACM-ICPC Nanjing Onsite 10.13 ~ 10.14  [ Au ]   ACM-ICPC XuZhou Onsite 10.27 ~ 10.28  [ Au">
+<meta name="description" content="TC/CF/CC handle : prime21">
 <meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="https://prime21.github.io/schedule/index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://prime21.github.io/about/index.html">
 <meta property="og:site_name" content="prime21">
-<meta property="og:description" content="2018Oct  Holiday with my girlfriend  logisim  learning  MIPS learning  Prepare for template code [Half done]  ACM-ICPC Nanjing Onsite 10.13 ~ 10.14  [ Au ]   ACM-ICPC XuZhou Onsite 10.27 ~ 10.28  [ Au">
+<meta property="og:description" content="TC/CF/CC handle : prime21">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-17T06:30:00.078Z">
+<meta property="og:updated_time" content="2018-10-15T13:36:15.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="schedule">
-<meta name="twitter:description" content="2018Oct  Holiday with my girlfriend  logisim  learning  MIPS learning  Prepare for template code [Half done]  ACM-ICPC Nanjing Onsite 10.13 ~ 10.14  [ Au ]   ACM-ICPC XuZhou Onsite 10.27 ~ 10.28  [ Au">
+<meta name="twitter:title" content="about">
+<meta name="twitter:description" content="TC/CF/CC handle : prime21">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="https://prime21.github.io/schedule/"/>
+  <link rel="canonical" href="https://prime21.github.io/about/"/>
 
 
 
@@ -362,7 +362,7 @@
 <li>Fuzzy Elevator System Control<br>  模糊的电梯调度模式能够比较方便的解决在若干参量上判定电梯应该走向什么取向，在不少决策上的灵敏度比其他的算法要高，可以 <strong>实现更加复杂的场景下的优化</strong>。lyt用了类似的策略去解决电梯调度问题。</li>
 <li><p>ALS (A little Simple)<br>  这个算法只在指导书上见过，不过很有作用，仅仅是加入了捎带和主请求限制，避免了饥饿性，是一个<strong>保证比傻瓜调度优</strong>的算法。</p>
 </li>
-<li><p>Killer Algorithm (My solution)<br>  This is my solution for this problem… 性能效果一般，但是处于<code>Quality of Service</code>的角度考虑的算法。</p>
+<li><p>Killer Algorithm (My solution)<br>  This is my solution for this problem… 性能效果一般，但是处于<code>Quality of Service</code>的角度考虑的算法。Killer算法是LOOK策略的一种衍化，不过我由于完全自己思考，没有考虑到LOOK的一些情况反而在不少数据表现不如LOOK。算法调度满足</p>
 </li>
 </ul>
 <p>在本地的实验中，对于<code>max_time</code>指标，百分数表示在所有数据中跑到最优解所占的比例。</p>
@@ -439,7 +439,7 @@
 </tbody>
 </table>
 </div>
-<p>可以发现在等待时间上两个指标都非常好。超过了原来的版本。</p>
+<p>同样百分数表示在所有数据中跑到最优指标所占的比例，可以发现在等待时间上两个指标都非常好。超过了原来的版本。</p>
 <h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>和助教讨论的阶段，我有以下收获，电梯调度是一个经典组合优化问题，优化的目标很多，前面的不少探讨都是按照MWT(Maximum wait time)做考量的，其实还有以下参量:</p>
 <ul>
 <li>Maximum wait time</li>
@@ -448,6 +448,7 @@
 <li>Energy cost</li>
 <li>Expecte length of queue</li>
 </ul>
+<p>至于应该用哪个参量作为评分，其实各有千秋，希望有此方面研究的人能给我指点迷津。</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li>A smart elevator scheduler that considers dynamic changes of energy cost and user traffic</li>
 <li>Improving Elevator Performance Using Reinforcement Learning</li>
