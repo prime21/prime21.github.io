@@ -365,7 +365,8 @@
 <li><p>Killer Algorithm (My solution)<br>  This is my solution for this problem… 性能效果一般，但是处于<code>Quality of Service</code>的角度考虑的算法。</p>
 </li>
 </ul>
-<h2 id="关于动态规划和强化学习的考虑模型"><a href="#关于动态规划和强化学习的考虑模型" class="headerlink" title="关于动态规划和强化学习的考虑模型"></a>关于动态规划和强化学习的考虑模型</h2><h3 id="个人实现"><a href="#个人实现" class="headerlink" title="个人实现"></a>个人实现</h3><pre><code>**在最后一次**，多人电梯的调度中，我尝试考量了采取**动态规划**调度总路径的方式，静态的去逼近这个界，但是效果不明显，而且存在部分bug，保险起见交了简易算法，经过后续修改，彻底解决了这个问题，在跑分上超过了很多普通的`Group System Control`的方式，主要的考察平均等待时间`ave_time`，最终结算时间`max_time`，最长等待队列`max_queue`。
+<h2 id="关于动态规划和强化学习的考虑模型"><a href="#关于动态规划和强化学习的考虑模型" class="headerlink" title="关于动态规划和强化学习的考虑模型"></a>关于动态规划和强化学习的考虑模型</h2><p>首先对于 <strong>预知所有</strong> 请求的情况而言，动态规划可以取得最优的调度。</p>
+<h3 id="个人实现"><a href="#个人实现" class="headerlink" title="个人实现"></a>个人实现</h3><pre><code>**在最后一次**，多人电梯的调度中，我尝试考量了采取 **动态规划** 调度总路径的方式，静态的去逼近这个界，但是效果不明显，而且存在部分bug，保险起见交了简易算法，经过后续修改，彻底解决了这个问题，在跑分上超过了很多普通的`Group System Control`的方式，主要的考察平均等待时间`ave_time`，最终结算时间`max_time`，最长等待队列`max_queue`。
 </code></pre><div class="table-container">
 <table>
 <thead>
