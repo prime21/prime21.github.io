@@ -421,13 +421,71 @@
 <p>每次查询前判断</p>
 <ol>
 <li>如果$ (timestamp_i \gg 4) == tm _ {count} $ 表示当前缓存的时间戳有效<ul>
-<li>如果$ (timestamp_i \&amp; (1 \ll id)) == (1 \ll id) $ 表示当前缓存了此类询问</li>
+<li>如果$ (timestamp_i \land (1 \ll id)) == (1 \ll id) $ 表示当前缓存了此类询问</li>
 </ul>
 </li>
 </ol>
 <p>根据情况更新$ timestamp_i $</p>
-<h2 id="Trick-3"><a href="#Trick-3" class="headerlink" title="Trick 3"></a>Trick 3</h2><p>注意到$fr \rightarrow to$ 和$ to \rightarrow fr$的查询是本质一样的，这样能减少很多缓存的必要。</p>
+<h3 id="Trick-3"><a href="#Trick-3" class="headerlink" title="Trick 3"></a>Trick 3</h3><p>注意到$fr \rightarrow to$ 和$ to \rightarrow fr$的查询是本质一样的，这样能减少很多缓存的必要。</p>
 <h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><p>在实验中，我的平均时间是$1.5 second$。</p>
+<h3 id="The-verification-experiment"><a href="#The-verification-experiment" class="headerlink" title="The verification experiment"></a>The verification experiment</h3><p>正确性验证上来看，如果是要验证SSSP算法的正确性，只需要吧disgraph封装好的类替换成所需的其他朴素算法即可。</p>
+<p>如果要验证拆点的正确性，只需要重构建图部分验证即可。</p>
+<p>故正确性验证是相当好做的</p>
+<h3 id="The-efficiency-experiment"><a href="#The-efficiency-experiment" class="headerlink" title="The efficiency experiment"></a>The efficiency experiment</h3><p>效率验证我使用的依然是 <code>/usr/bin/time</code> 测试时间的最佳函数</p>
+<p>实验准备如下:</p>
+<ol>
+<li>数据生成器<ul>
+<li>朴素生成器，遍历查询所有询问</li>
+<li>重构生成器，多次重构，在重构之间做询问</li>
+<li>欧拉回路生成器，每次加入的PATH是欧拉回路，或者是欧拉回路的一部分，增加图的复杂性</li>
+<li>半定向生成器，先拟定一棵最短路树，在最短路树的节点之间加边，能直接验证算法正确性</li>
+</ul>
+</li>
+</ol>
+<p>对 A-star-algorithm,$O(n^2)$ transfer line algorithm, my algorithm, floyd algorithm(muiti path merge) 做性能测试，讨论测试点运行的平均时间</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">algo \ case</th>
+<th style="text-align:center">BF gen</th>
+<th style="text-align:center">rebuild gen</th>
+<th style="text-align:center">Euler path gen</th>
+<th style="text-align:center">shortest path tree gen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A-star-algorithm</td>
+<td style="text-align:center">5.31s</td>
+<td style="text-align:center">5.30s</td>
+<td style="text-align:center">6.12s</td>
+<td style="text-align:center">3.92s</td>
+</tr>
+<tr>
+<td style="text-align:center">$O(n^2)$ transfer line algorithm</td>
+<td style="text-align:center">7.21s</td>
+<td style="text-align:center">7.33s</td>
+<td style="text-align:center">7.44s</td>
+<td style="text-align:center">7.12s</td>
+</tr>
+<tr>
+<td style="text-align:center">my algorithm</td>
+<td style="text-align:center"><font :="" rockwell="" color="red"> 1.38s </font></td>
+<td style="text-align:center"><font :="" rockwell="" color="red"> 1.76s </font></td>
+<td style="text-align:center">2.12s</td>
+<td style="text-align:center"><font :="" rockwell="" color="red"> 1.32s </font></td>
+</tr>
+<tr>
+<td style="text-align:center">floyd algorithm</td>
+<td style="text-align:center"><font :="" rockwell="" color="red"> 1.38s </font></td>
+<td style="text-align:center">2.21s</td>
+<td style="text-align:center"><font :="" rockwell="" color="red"> 2.10s </font></td>
+<td style="text-align:center">1.72s</td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -603,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-amp-Definition"><span class="nav-number">1.</span> <span class="nav-text">Introduction &amp; Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dijkstra"><span class="nav-number">2.1.</span> <span class="nav-text">Dijkstra</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trick-1"><span class="nav-number">2.2.</span> <span class="nav-text">Trick 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trick-2"><span class="nav-number">2.3.</span> <span class="nav-text">Trick 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trick-3"><span class="nav-number">3.</span> <span class="nav-text">Trick 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experience"><span class="nav-number">4.</span> <span class="nav-text">Experience</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-amp-Definition"><span class="nav-number">1.</span> <span class="nav-text">Introduction &amp; Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dijkstra"><span class="nav-number">2.1.</span> <span class="nav-text">Dijkstra</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trick-1"><span class="nav-number">2.2.</span> <span class="nav-text">Trick 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trick-2"><span class="nav-number">2.3.</span> <span class="nav-text">Trick 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trick-3"><span class="nav-number">2.4.</span> <span class="nav-text">Trick 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experience"><span class="nav-number">3.</span> <span class="nav-text">Experience</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-verification-experiment"><span class="nav-number">3.1.</span> <span class="nav-text">The verification experiment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-efficiency-experiment"><span class="nav-number">3.2.</span> <span class="nav-text">The efficiency experiment</span></a></li></ol></li></ol></div>
             
 
           </div>
