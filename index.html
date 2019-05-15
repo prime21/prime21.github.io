@@ -369,7 +369,7 @@
 <li>边的线路号，记做$pid(e)$，表示在哪些线路中出现，是一个 <strong>集合</strong> 。</li>
 <li>路径是一个序列$ \{ e_i \} $ 其中，路径中任意相邻两个$e_i$和$e _ {i+1}$ 满足 $to ( e_i ) = fr( e _ {i+1} ) $ </li>
 <li>路径的边权，路径的边权等于每条边的权和，记做$ ev ( \{ e_i \} )$</li>
-<li>路径的换乘权，对于一个路径$ \{ p_i \}$ ， 设$ C =  \{ i | pi-d(p_i) \cap pid(p _ {i+1} ) = \emptyset \} $, 集合$C$的大小$|C|$是路径的换乘权，记做$ cv ( \{ p_i \} ) $</li>
+<li>路径的换乘权，对于一个路径$ \{ p_i \}$ ， 设$ C =  \{ i | pid(p_i) \cap pid(p _ {i+1} ) = \emptyset \} $, 集合$C$的大小$|C|$是路径的换乘权，记做$ cv ( \{ p_i \} ) $</li>
 </ol>
 <p>那么现在的问题是，对一张图支持</p>
 <ol>
@@ -430,7 +430,8 @@
 </ol>
 <p>根据情况更新$ timestamp_i $</p>
 <h2 id="Trick-3"><a href="#Trick-3" class="headerlink" title="Trick 3"></a>Trick 3</h2><p>注意到$fr \rightarrow to$ 和$ to \rightarrow fr$的查询是本质一样的，这样能减少很多缓存的必要。</p>
-<h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><h2 id="Open-Problem"><a href="#Open-Problem" class="headerlink" title="Open Problem"></a>Open Problem</h2>
+<h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><p>在实验中，我的平均时间是$1.5 second$。</p>
+
           
         
       
@@ -1876,7 +1877,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
