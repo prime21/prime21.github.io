@@ -360,79 +360,14 @@
 
       
         
-          
-            <h2 id="Introduction-amp-Definition"><a href="#Introduction-amp-Definition" class="headerlink" title="Introduction &amp; Definition"></a>Introduction &amp; Definition</h2><p>在最近的三次OO中介绍了一个动态图问题，定义如下:</p>
-<ol>
-<li>节点，一个节点，用编号表示</li>
-<li>边，两个节点之间边是一个二元组$ &lt; fr,to &gt; $ 两个节点之间相连，用$to(e)$、$fr(e)$表示二元组的两个元素。</li>
-<li>线路，线路是一个有标号边序列$ \{ p_i \} $，记标号为$pid$ 其中，序列中任意相邻两个$p_i$和$p _ {i+1}$ 满足 $to ( p_i ) = fr( p _ {i+1} ) $，线路上的每条边赋予与线路相同标号。</li>
-<li>边的线路号，记做$pid(e)$，表示在哪些线路中出现，是一个 <strong>集合</strong> 。</li>
-<li>路径是一个序列$ \{ e_i \} $ 其中，路径中任意相邻两个$e_i$和$e _ {i+1}$ 满足 $to ( e_i ) = fr( e _ {i+1} ) $ </li>
-<li>路径的边权，路径的边权等于每条边的权和，记做$ ev ( \{ e_i \} )$</li>
-<li>路径的换乘权，对于一个路径$ \{ p_i \}$ ， 设$ C =  \{ i | pid(p_i) \cap pid(p _ {i+1} ) = \emptyset \} $, 集合$C$的大小$|C|$是路径的换乘权，记做$ cv ( \{ p_i \} ) $</li>
-</ol>
-<p>那么现在的问题是，对一张图支持</p>
-<ol>
-<li>动态的加入一个线路</li>
-<li>动态的删除一个线路</li>
-<li>查询任意两点之间路径的边权和的最小值</li>
-<li>查询任意两点之间路径的换乘权+边权的最小值</li>
-</ol>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>问题的关键在于处理换乘。 <em>可以将每条线路上的同标号节点，视作不同的节点。</em> 做拆点。</p>
-<p>一个朴素的想法是，对所有的相同标号的点（属于不同线路的点）之间，两两连边，权值为换乘边的边权。做最短路。</p>
-<p>这样的坏处是:</p>
-<blockquote>
-<p> 加的边的数量是平方级别的</p>
-</blockquote>
-<h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><p>这是一个通用的SSSP算法，复杂度为$O( N + M \log N)$ 其中$N$表示点的个数，$M$表示边的个数。可以看到，这样的算法适合 <strong>稀疏图</strong>。 故加的边太多，对Dijkstra算法是有害的。</p>
-<p>此外，SSSP算法是通用的，应当写成抽象的模板，一个言简意赅的写法如下，此处省略了变量的定义若干，对象的构造若干，给出了<strong>保证复杂度正确的最短路写法</strong>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mydisgraph</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> src,<span class="keyword">int</span> dis,<span class="keyword">int</span> vl)</span> </span>&#123;</span><br><span class="line">        ++cnt;</span><br><span class="line">        nxt[cnt] = hd[src];</span><br><span class="line">        to[cnt] = dis;</span><br><span class="line">        val[cnt] = vl;</span><br><span class="line">        hd[src] = cnt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sssp</span><span class="params">(<span class="keyword">int</span> src)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mxnode; i++) &#123;</span><br><span class="line">            dis[i] = infdis;</span><br><span class="line">        &#125;</span><br><span class="line">        dis[src] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        TreeSet&lt;Integer&gt; q = <span class="keyword">new</span> TreeSet&lt;Integer&gt;(</span><br><span class="line">            <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer a, Integer b)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (dis[a] &lt; dis[b]) &#123;</span><br><span class="line">                        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (dis[a] &gt; dis[b]) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> a - b;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        q.add(src);</span><br><span class="line">        <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> now = q.pollFirst();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = hd[now];i != <span class="number">0</span>; i = nxt[i]) &#123;</span><br><span class="line">                <span class="keyword">int</span> upd = to[i];</span><br><span class="line">                <span class="keyword">int</span> ddd = dis[now] + val[i];</span><br><span class="line">                <span class="keyword">if</span> (dis[upd] &gt; dis[now] + val[i]) &#123;</span><br><span class="line">                    q.remove(upd);</span><br><span class="line">                    dis[upd] = dis[now] + val[i];</span><br><span class="line">                    q.add(upd);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// end dij</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此处有贴实现code的必要，工程问题要考虑实现细节，只谈设计不落地是不现实的。</p>
-<h3 id="Trick-1"><a href="#Trick-1" class="headerlink" title="Trick 1"></a>Trick 1</h3><p>首先，为了改变边的数量过多，一个合理的想法是，对于每个点设立换乘站，其含义和真实的地铁情况类似，两条公共站的地铁，实际上换乘是要先进入本站的换乘平台再离开本站换乘平台。</p>
-<p>用图示如下</p>
-<pre class="mermaid">graph LR
-    A --- |One| D
-    B --- |Two| D
-    C --- |Three| D 
-    D --- |One| E
-    D --- |Two| F
-    D --- |Three| G</pre>
-
-<p>拆点后</p>
-<pre class="mermaid">graph LR
- D0 --> A
- D0 --> B
- D0 --> C
- D0 --> E
- D0 --> F
- D0 --> G
- A --- |One| D1
- B ---|Two| D2
- C ---|Three| D3 
- D1 ---|One| E
- D2 ---|Two| F 
- D3 ---|Three| G 
- D1 --> D0
- D2 --> D0
- D3 --> D0</pre>
-
-<p>注意到拆点后的图是换乘站和其他点的关系是有向的，即一条原始边$fr \leftrightarrow to$<br>要拆成$fr \rightarrow fr’$,$to \rightarrow to’$,$fr \leftrightarrow to$, $ fr’ \rightarrow to $, $fr \leftarrow to’$ 多出四条边。</p>
-<p>这样我们的换乘边的数量就是平方级别的</p>
-<h3 id="Trick-2"><a href="#Trick-2" class="headerlink" title="Trick 2"></a>Trick 2</h3><p>使用时间戳缓存</p>
-<p>因为有多种边权和换乘权的查询，而每次查询都做一次单源最短路是得不偿失的。故可以考虑缓存这些数据。</p>
-<p>利用$timestamp_i$表示以$i$为源点的最短路数据缓存的时间戳，利用$tm _ {count}$表示当前修改次数，记当前询问类型为（$id$）</p>
-<p>每次查询前判断</p>
-<ol>
-<li>如果$ (timestamp_i &gt;&gt; 4) == tm _ {count} $ 表示当前缓存的时间戳有效<ul>
-<li>如果$ (timestamp_i &amp; (1 &lt;&lt; id)) == (1 &lt;&lt; id) $ 表示当前缓存了此类询问</li>
-</ul>
-</li>
-</ol>
-<p>根据情况更新$ timestamp_i $</p>
-<h2 id="Trick-3"><a href="#Trick-3" class="headerlink" title="Trick 3"></a>Trick 3</h2><p>注意到$fr \rightarrow to$ 和$ to \rightarrow fr$的查询是本质一样的，这样能减少很多缓存的必要。</p>
-<h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><p>在实验中，我的平均时间是$1.5 second$。</p>
-
-          
+          <p>一个简单的算法问题讨论</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/09/A-dynamic-graph-shortest-path-problem/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

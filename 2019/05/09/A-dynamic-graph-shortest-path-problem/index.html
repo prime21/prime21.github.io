@@ -356,7 +356,9 @@
       
 
       
-        <h2 id="Introduction-amp-Definition"><a href="#Introduction-amp-Definition" class="headerlink" title="Introduction &amp; Definition"></a>Introduction &amp; Definition</h2><p>在最近的三次OO中介绍了一个动态图问题，定义如下:</p>
+        <p>一个简单的算法问题讨论</p>
+<a id="more"></a>
+<h2 id="Introduction-amp-Definition"><a href="#Introduction-amp-Definition" class="headerlink" title="Introduction &amp; Definition"></a>Introduction &amp; Definition</h2><p>在最近的三次OO中介绍了一个动态图问题，定义如下:</p>
 <ol>
 <li>节点，一个节点，用编号表示</li>
 <li>边，两个节点之间边是一个二元组$ &lt; fr,to &gt; $ 两个节点之间相连，用$to(e)$、$fr(e)$表示二元组的两个元素。</li>
@@ -418,8 +420,8 @@
 <p>利用$timestamp_i$表示以$i$为源点的最短路数据缓存的时间戳，利用$tm _ {count}$表示当前修改次数，记当前询问类型为（$id$）</p>
 <p>每次查询前判断</p>
 <ol>
-<li>如果$ (timestamp_i &gt;&gt; 4) == tm _ {count} $ 表示当前缓存的时间戳有效<ul>
-<li>如果$ (timestamp_i &amp; (1 &lt;&lt; id)) == (1 &lt;&lt; id) $ 表示当前缓存了此类询问</li>
+<li>如果$ (timestamp_i \gg 4) == tm _ {count} $ 表示当前缓存的时间戳有效<ul>
+<li>如果$ (timestamp_i \&amp; (1 \ll id)) == (1 \ll id) $ 表示当前缓存了此类询问</li>
 </ul>
 </li>
 </ol>
