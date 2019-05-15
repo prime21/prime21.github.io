@@ -356,7 +356,9 @@
       
 
       
-        <h2 id="电梯优化之道"><a href="#电梯优化之道" class="headerlink" title="电梯优化之道"></a>电梯优化之道</h2><p>优化是Elevator Scheduling 问题本身一个非常有趣的方面。在这个方面可以先讨论一些和本次无关的一些优化大方向</p>
+        <p>Elevator Scheduling 是一个经典问题</p>
+<a id="more"></a>
+<h2 id="电梯优化之道"><a href="#电梯优化之道" class="headerlink" title="电梯优化之道"></a>电梯优化之道</h2><p>优化是Elevator Scheduling 问题本身一个非常有趣的方面。在这个方面可以先讨论一些和本次无关的一些优化大方向</p>
 <h2 id="常见算法粗略比较"><a href="#常见算法粗略比较" class="headerlink" title="常见算法粗略比较"></a>常见算法粗略比较</h2><ul>
 <li>Nearest Elevator<br>  这个算法在强测阶段非常吃亏，不知道是为什么，有可能是因为数据很随机，和自然电梯需求分布不同。比较常见的问题是 <strong>饥饿现象</strong> 。</li>
 <li>Fuzzy Elevator System Control<br>  模糊的电梯调度模式能够比较方便的解决在若干参量上判定电梯应该走向什么取向，在不少决策上的灵敏度比其他的算法要高，可以 <strong>实现更加复杂的场景下的优化</strong>。lyt用了类似的策略去解决电梯调度问题。</li>

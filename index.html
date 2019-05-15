@@ -493,106 +493,14 @@
 
       
         
-          
-            <h2 id="电梯优化之道"><a href="#电梯优化之道" class="headerlink" title="电梯优化之道"></a>电梯优化之道</h2><p>优化是Elevator Scheduling 问题本身一个非常有趣的方面。在这个方面可以先讨论一些和本次无关的一些优化大方向</p>
-<h2 id="常见算法粗略比较"><a href="#常见算法粗略比较" class="headerlink" title="常见算法粗略比较"></a>常见算法粗略比较</h2><ul>
-<li>Nearest Elevator<br>  这个算法在强测阶段非常吃亏，不知道是为什么，有可能是因为数据很随机，和自然电梯需求分布不同。比较常见的问题是 <strong>饥饿现象</strong> 。</li>
-<li>Fuzzy Elevator System Control<br>  模糊的电梯调度模式能够比较方便的解决在若干参量上判定电梯应该走向什么取向，在不少决策上的灵敏度比其他的算法要高，可以 <strong>实现更加复杂的场景下的优化</strong>。lyt用了类似的策略去解决电梯调度问题。</li>
-<li><p>ALS (A little Simple)<br>  这个算法只在指导书上见过，不过很有作用，仅仅是加入了捎带和主请求限制，避免了饥饿性，是一个<strong>保证比傻瓜调度优</strong>的算法。</p>
-</li>
-<li><p>Killer Algorithm (My solution)<br>  This is my solution for this problem… 性能效果一般，但是处于<code>Quality of Service</code>的角度考虑的算法。Killer算法是LOOK策略的一种衍化，不过我由于完全自己思考，没有考虑到LOOK的一些情况反而在不少数据表现不如LOOK。算法调度满足</p>
-</li>
-</ul>
-<p>在本地的实验中，对于<code>max_time</code>指标，百分数表示在所有数据中跑到最优解所占的比例。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">algorithm</th>
-<th style="text-align:center">max_time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Fuzzy</td>
-<td style="text-align:center">$51.4\%$</td>
-</tr>
-<tr>
-<td style="text-align:center">my solution</td>
-<td style="text-align:center">$46.4\%$</td>
-</tr>
-<tr>
-<td style="text-align:center">Nearest with capacity</td>
-<td style="text-align:center">$32.1\%$</td>
-</tr>
-<tr>
-<td style="text-align:center">ALS</td>
-<td style="text-align:center">$23.7\%$</td>
-</tr>
-<tr>
-<td style="text-align:center">Nearest</td>
-<td style="text-align:center">$13.1\%$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="关于动态规划和强化学习的考虑模型"><a href="#关于动态规划和强化学习的考虑模型" class="headerlink" title="关于动态规划和强化学习的考虑模型"></a>关于动态规划和强化学习的考虑模型</h2><p>首先对于 <strong>预知所有</strong> 请求的情况而言，动态规划可以取得最优的调度。这是考虑记录$dp[S][G]$ 表示考虑满足了需求集合$S$，当前电梯的状态集合为$G$的最优时间为多少。可以简易的用下式描述dp过程</p>
-<script type="math/tex; mode=display">dp[S][G] = \min \{ dp[S'][G'] + val(G',G,S-S') \}</script><p>其中$val$函数表示，将电梯运行状态从$G’$变换到$G$，且满足了$S-S’$内的需求的最短时间。这个问题可以化简为，多个起点到终点的线段，有多少个交点，即在一个线段上做如下操作:</p>
-<ol>
-<li>加入一个新的请求</li>
-<li>查询某一段之间有多少个公用请求(合并捎带)</li>
-</ol>
-<p>可以发现这样的动态规划确实是不遗漏的处理了所有可能最有解的情况。</p>
-<p>强化学习可以认为是在有时间维度后的模糊的动态规划，对于这方面的解析可以看我的参考资料二，我会有时间更新这部分的paper阅读。</p>
-<h3 id="个人实现"><a href="#个人实现" class="headerlink" title="个人实现"></a>个人实现</h3><p><strong>在最后一次</strong>，多人电梯的调度中，我尝试考量了采取 <strong>动态规划</strong> 调度总路径的方式，静态的去逼近这个界，但是效果不明显，而且存在部分bug，保险起见交了简易算法，经过后续修改，彻底解决了这个问题，在跑分上超过了很多普通的<code>Group System Control</code>的方式，主要的考察平均等待时间<code>ave_time</code>，最终结算时间<code>max_time</code>，最长等待队列<code>max_queue</code>。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">algorithm</th>
-<th style="text-align:center">ave_time</th>
-<th style="text-align:center">max_time</th>
-<th style="text-align:center">max_queue</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">dp algo</td>
-<td style="text-align:center">$50.3\%$</td>
-<td style="text-align:center">$80.0 \%$</td>
-<td style="text-align:center">$31.3 \%$</td>
-</tr>
-<tr>
-<td style="text-align:center">killer algo</td>
-<td style="text-align:center">$33.3\%$</td>
-<td style="text-align:center">$10.3 \%$</td>
-<td style="text-align:center">$51.2 \%$</td>
-</tr>
-<tr>
-<td style="text-align:center">als algo</td>
-<td style="text-align:center">$26.3\%$</td>
-<td style="text-align:center">$ 12.1 \% $</td>
-<td style="text-align:center">$22.3 \%$</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>同样百分数表示在所有数据中跑到最优指标所占的比例，可以发现在等待时间上两个指标都非常好。超过了原来的版本。</p>
-<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>和助教讨论的阶段，我有以下收获，电梯调度是一个经典组合优化问题，优化的目标很多，前面的不少探讨都是按照MWT(Maximum wait time)做考量的，其实还有以下参量:</p>
-<ul>
-<li>Maximum wait time</li>
-<li>Expected wait time of users in the system</li>
-<li>Quality of Service</li>
-<li>Energy cost</li>
-<li>Expecte length of queue</li>
-</ul>
-<p>至于应该用哪个参量作为评分，其实各有千秋，希望有此方面研究的人能给我指点迷津。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li>A smart elevator scheduler that considers dynamic changes of energy cost and user traffic</li>
-<li>Improving Elevator Performance Using Reinforcement Learning</li>
-</ol>
-
-          
+          <p>Elevator Scheduling 是一个经典问题</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/30/oo-unit-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
