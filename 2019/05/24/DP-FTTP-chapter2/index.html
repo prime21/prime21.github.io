@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="TC/CF/CC handle : prime21">
+<meta name="description" content="2019Jun[Introductory Combinatorics Note Book][1] [1] : https://prime21.github.io/book/comb_note/index.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://prime21.github.io/about/index.html">
+<meta property="og:title" content="training">
+<meta property="og:url" content="https://prime21.github.io/book/index.html">
 <meta property="og:site_name" content="prime21">
-<meta property="og:description" content="TC/CF/CC handle : prime21">
+<meta property="og:description" content="2019Jun[Introductory Combinatorics Note Book][1] [1] : https://prime21.github.io/book/comb_note/index.html">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-15T13:36:15.120Z">
+<meta property="og:updated_time" content="2019-06-13T02:28:25.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="TC/CF/CC handle : prime21">
+<meta name="twitter:title" content="training">
+<meta name="twitter:description" content="2019Jun[Introductory Combinatorics Note Book][1] [1] : https://prime21.github.io/book/comb_note/index.html">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="https://prime21.github.io/about/"/>
+  <link rel="canonical" href="https://prime21.github.io/book/"/>
 
 
 
@@ -247,6 +247,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-book">
+          <a href="/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            book
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -362,7 +372,11 @@
 <h3 id="Unbounded-DP"><a href="#Unbounded-DP" class="headerlink" title="Unbounded DP"></a>Unbounded DP</h3><p>$D$ and $D’$ are neighboring if $D$ can obtained from $D’$ by adding or removing one element.</p>
 <h3 id="Bounded-DP"><a href="#Bounded-DP" class="headerlink" title="Bounded DP"></a>Bounded DP</h3><p>$D$ and $D’$ are neighboring if $D$ can obtained from $D’$ by replacing one element to another.</p>
 <p>We use unbounded DP , beacause noting that any algorithm that satisfies $\epsilon-$ unbounded DP also satisfies $(2 \epsilon)-$ bounded DP.</p>
-<h2 id="Properties-of-epsilon-DP"><a href="#Properties-of-epsilon-DP" class="headerlink" title="Properties of $\epsilon-$ DP"></a>Properties of $\epsilon-$ DP</h2><h3 id="post-processing-amp-sequential-composition"><a href="#post-processing-amp-sequential-composition" class="headerlink" title="post-processing &amp; sequential composition"></a>post-processing &amp; sequential composition</h3><p>Given $\mathcal{A} _ 1 ( \cdot )$ that satisfies $\epsilon-$ DP, then for any algorithm $\mathcal{A} _ 2$, the compostion of $\mathcal{A} _ 1 $ and $\mathcal{A} _ 2$  , i.e. , $ \mathcal{A} _ 2 ( \mathcal{A} _ 1 ( \cdot )  ) $ satisfies $\epsilon -$ DP.</p>
+<h2 id="Properties-of-epsilon-DP"><a href="#Properties-of-epsilon-DP" class="headerlink" title="Properties of $\epsilon-$ DP"></a>Properties of $\epsilon-$ DP</h2><ol>
+<li>post-processing &amp; sequential</li>
+<li>parallel compostion and convexity</li>
+</ol>
+<h3 id="post-processing"><a href="#post-processing" class="headerlink" title="post-processing"></a>post-processing</h3><p>Given $\mathcal{A} _ 1 ( \cdot )$ that satisfies $\epsilon-$ DP, then for any algorithm $\mathcal{A} _ 2$, the compostion of $\mathcal{A} _ 1 $ and $\mathcal{A} _ 2$  , i.e. , $ \mathcal{A} _ 2 ( \mathcal{A} _ 1 ( \cdot )  ) $ satisfies $\epsilon -$ DP.</p>
 <blockquote>
 <p>Proof</p>
 </blockquote>
@@ -374,7 +388,8 @@ Pr [ \mathcal{A} _ 2 ( \mathcal{A} _ 1 (D) ) = t ]
 & \le  \sum _ { s \in S } e^{\epsilon} Pr[ \mathcal{A} _ 1 (D') = s  ] Pr[ \mathcal{A} _ 2 (s) = t] \\
 & =  e^{\epsilon} Pr[ \mathcal{A} _ 2 ( \mathcal{A} _ 1 (D') ) = t ]
 
-\end{aligned}</script>
+\end{aligned}</script><h3 id="sequential-composition"><a href="#sequential-composition" class="headerlink" title="sequential composition"></a>sequential composition</h3><p>Given $\mathcal{A} _ 1 ( \cdot )$ that satisfies $\epsilon_1-$ DP, then for any algorithm $\mathcal{A} _ 2 ( s , \cdot )$ that satisfies $\epsilon_2$DP, then $\mathcal{A} (D) = \mathcal{A} _ 2( \mathcal{A} _ 1 (D), D )$ satisfies $\epsilon_1 + \epsilon_2 -$ DP.</p>
+<h3 id="general-sequential-composition"><a href="#general-sequential-composition" class="headerlink" title="general sequential composition"></a>general sequential composition</h3>
       
     </div>
     
@@ -407,6 +422,10 @@ Pr [ \mathcal{A} _ 2 ( \mathcal{A} _ 1 (D) ) = t ]
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/27/intro-comb-chapter-7/" rel="prev" title="intro comb chapter 7">
+                intro comb chapter 7 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -493,7 +512,7 @@ Pr [ \mathcal{A} _ 2 ( \mathcal{A} _ 1 (D) ) = t ]
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -539,7 +558,7 @@ Pr [ \mathcal{A} _ 2 ( \mathcal{A} _ 1 (D) ) = t ]
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definition-of-epsilon-DP"><span class="nav-number">1.</span> <span class="nav-text">Definition of $\epsilon-$ DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unbounded-DP"><span class="nav-number">1.1.</span> <span class="nav-text">Unbounded DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bounded-DP"><span class="nav-number">1.2.</span> <span class="nav-text">Bounded DP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-of-epsilon-DP"><span class="nav-number">2.</span> <span class="nav-text">Properties of $\epsilon-$ DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#post-processing-amp-sequential-composition"><span class="nav-number">2.1.</span> <span class="nav-text">post-processing &amp; sequential composition</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definition-of-epsilon-DP"><span class="nav-number">1.</span> <span class="nav-text">Definition of $\epsilon-$ DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unbounded-DP"><span class="nav-number">1.1.</span> <span class="nav-text">Unbounded DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bounded-DP"><span class="nav-number">1.2.</span> <span class="nav-text">Bounded DP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-of-epsilon-DP"><span class="nav-number">2.</span> <span class="nav-text">Properties of $\epsilon-$ DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#post-processing"><span class="nav-number">2.1.</span> <span class="nav-text">post-processing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sequential-composition"><span class="nav-number">2.2.</span> <span class="nav-text">sequential composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#general-sequential-composition"><span class="nav-number">2.3.</span> <span class="nav-text">general sequential composition</span></a></li></ol></li></ol></div>
             
 
           </div>
